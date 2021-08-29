@@ -1,5 +1,5 @@
 {
-  "name": "cljs-amplified",
+  "name": "clojurescript-amplified",
   "version": "0.0.1",
   "devDependencies": {
     "shadow-cljs": "2.15.5",
