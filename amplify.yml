@@ -1,0 +1,34 @@
+version: 1
+backend:
+  phases:
+    # IMPORTANT - Please verify your build commands
+    build:
+      commands:
+        - '# Execute Amplify CLI with the helper script'
+        - amplifyPush --simple
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - amazon-linux-extras enable corretto8
+        - yum -y install java-1.8.0-amazon-corretto-devel
+        - java -version
+        - nvm install 14.15.4
+        - nvm use 14.15.4
+        - npm install -g npm@latest
+        - node --version
+        - npm --version
+        - npm install -g shadow-cljs
+    build:
+      commands:
+        - npm ci
+        - npm run build
+        - npm run pack
+  artifacts:
+    # IMPORTANT - Please verify your build output directory
+    baseDirectory: public/
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
