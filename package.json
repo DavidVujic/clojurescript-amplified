@@ -2,9 +2,19 @@
   "name": "clojurescript-amplified",
   "version": "0.0.1",
   "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@storybook/addon-actions": "^6.3.7",
+    "@storybook/addon-essentials": "^6.3.7",
+    "@storybook/addon-links": "^6.3.7",
+    "@storybook/builder-webpack5": "^6.3.7",
+    "@storybook/manager-webpack5": "^6.3.7",
+    "@storybook/react": "^6.3.7",
+    "babel-loader": "^8.2.2",
+    "dotenv-webpack": "^7.0.3",
+    "process": "^0.11.10",
     "shadow-cljs": "2.15.5",
-    "webpack": "5.51.1",
-    "webpack-cli": "4.8.0"
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0"
   },
   "dependencies": {
     "@aws-amplify/ui-react": "^1.2.11",
@@ -16,6 +26,9 @@
     "compile": "shadow-cljs compile app",
     "watch": "shadow-cljs watch app",
     "build": "shadow-cljs release app",
-    "pack": "webpack"
+    "pack": "webpack",
+    "watch-stories": "shadow-cljs watch stories",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   }
 }

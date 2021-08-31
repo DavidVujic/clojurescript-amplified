@@ -3,8 +3,16 @@
             ["aws-amplify" :default Amplify]
             [reagent.dom :as rdom]))
 
+(defn header []
+  [:h2 "Clojure. Amplified."])
+
+(defn greetings [name]
+  [:p "Hello " [:strong name]])
+
 (defn app []
-  [:div "Hello World"])
+  [:<>
+   [header]
+   [greetings "ClojureScript developer"]])
 
 (defn ^:export main []
   (-> Amplify (.configure aws-exports))
