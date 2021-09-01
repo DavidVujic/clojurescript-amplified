@@ -9,4 +9,5 @@
             :args      {:message "Storybook"}}))
 
 (defn ^:export greetings [args]
-  (reagent/as-element [core/greetings (-> args helper/->params :message)]))
+  (reagent/as-element
+   [core/greetings (-> args helper/->params :message)]))
