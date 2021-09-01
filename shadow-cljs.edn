@@ -15,5 +15,5 @@
                       :modules    {:main {:init-fn app.core/main}}
                       :devtools   {:after-load app.core/main}}
             :stories {:target     :npm-module
-                      :entries    [app.stories.core]
+                      :ns-regexp  "-stories$"
                       :output-dir "public/js/stories"}}}
