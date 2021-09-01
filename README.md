@@ -2,7 +2,8 @@
 
 In this repo, you will find examples on how to setup a `ClojureScript` web app with tools from the `JavaScript` ecosystem.
 
-__Want to try out Storybook, without having to setup AWS Amplify?_
+__Want to try out Storybook, without having to setup AWS Amplify?__
+
 You can safely delete the `aws` specific requires and the initialization in the `app.core` namespace.
 I plan to split the example code into branches (something like `with-amplify` and `with-storybook`) shortly.
 
