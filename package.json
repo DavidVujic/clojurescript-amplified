@@ -24,10 +24,9 @@
   },
   "scripts": {
     "compile": "shadow-cljs compile app",
-    "watch": "shadow-cljs watch app",
+    "watch": "shadow-cljs watch app stories",
     "build": "shadow-cljs release app",
     "pack": "webpack",
-    "watch-stories": "shadow-cljs watch stories",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   }
