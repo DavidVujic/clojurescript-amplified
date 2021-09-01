@@ -13,8 +13,7 @@
                       :js-options {:js-provider    :external
                                    :external-index "target/index.js"}
                       :modules    {:main {:init-fn app.core/main}}
-                      :devtools   {:after-load app.core/main}
-                      :release    {:compiler-options {:optimizations :advanced}}}
+                      :devtools   {:after-load app.core/main}}
             :stories {:target     :npm-module
                       :entries    [app.stories.core]
                       :output-dir "public/js/stories"}}}
