@@ -10,7 +10,6 @@
     "@storybook/manager-webpack5": "^6.3.7",
     "@storybook/react": "^6.3.7",
     "babel-loader": "^8.2.2",
-    "dotenv-webpack": "^7.0.3",
     "process": "^0.11.10",
     "shadow-cljs": "2.15.8",
     "webpack": "^5.51.1",
