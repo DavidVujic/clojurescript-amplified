@@ -11,6 +11,7 @@ module.exports = {
     module: {
         rules: [
             {
+                // docs: https://webpack.js.org/configuration/module/#resolvefullyspecified
                 test: /\.m?js/,
                 resolve: {
                     fullySpecified: false,
