@@ -6,7 +6,7 @@ In this repo, you will find examples on how to setup a `ClojureScript` web app w
 If you want to try out the `AWS Amplify` specific code, you will need to install a CLI from AWS 
 and run some initialization steps. Everything is described in the official [Amplify docs](https://docs.amplify.aws/start/getting-started/installation/q/integration/react/#option-1-watch-the-video-guide).
 
-##### Want to try out Storybook, without having to setup AWS Amplify?
+##### Want to try out Storybook or Material-UI, without having to setup AWS Amplify?
 If so, then you can safely skip the Amplify init stuff, delete the `aws` specific requires and the initialization in the `app.core` namespace.
 
 
@@ -49,5 +49,8 @@ npm run storybook
 
 #### About ClojureScript and Storybook
 [Component Driven ClojureScript with Storybook](https://davidvujic.blogspot.com/2021/08/component-driven-clojurescript-with-storybook.html)
+
+#### About Clojurescript and Material-UI
+[Material Design in a Functional World](https://davidvujic.blogspot.com/2021/09/material-design-in-a-functional-world.html)
 
 More example code, tools setup and blog posts in the making ...
