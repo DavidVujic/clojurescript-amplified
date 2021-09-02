@@ -7,7 +7,9 @@ If you want to try out the `AWS Amplify` specific code, you will need to install
 and run some initialization steps. Everything is described in the official [Amplify docs](https://docs.amplify.aws/start/getting-started/installation/q/integration/react/#option-1-watch-the-video-guide).
 
 ##### Want to try out Storybook, without having to setup AWS Amplify?
-If so, then You can safely skip the Amplify init stuff, delete the `aws` specific requires and the initialization in the `app.core` namespace.
+If so, then you can safely skip the Amplify init stuff, delete the `aws` specific requires and the initialization in the `app.core` namespace.
+
+
 I plan to split the example code into branches (something like `with-amplify` and `with-storybook`) shortly.
 
 ##### Commands
@@ -17,9 +19,9 @@ npm run watch
 ```
 
 Emacs user? You can add a `.dir-locals.el` to the root of this repo to wire up the `shadow-cljs` commands,
-insted of running the `npm run watch` command.
+instead of running the `npm run watch` command.
 
-Emacs `.dir-locals.el` example:
+Emacs .dir-locals.el example:
 
 ``` emacs-lisp
 ((nil . ((cider-default-cljs-repl . shadow)
