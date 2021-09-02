@@ -4,9 +4,9 @@
             [reagent.core :as reagent]))
 
 (def ^:export default
-  (clj->js {:title     "The Greetings Component"
-            :component (reagent/reactify-component core/greetings)
-            :args      {:message "Storybook"}}))
+  (helper/->default {:title     "A Greetings Component"
+                     :component core/greetings
+                     :args      {:message "Storybook"}}))
 
 (defn ^:export greetings [args]
   (reagent/as-element
