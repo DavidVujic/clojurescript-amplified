@@ -1,5 +1,5 @@
 {
   "ignore": [
-    "public/js/stories/*.js"
+    "public/js/stories/**/*.js"
   ]
 }
