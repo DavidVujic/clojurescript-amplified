@@ -28,6 +28,7 @@
     "watch": "shadow-cljs watch app stories",
     "build": "shadow-cljs release app",
     "pack": "webpack",
+    "pack-watch": "webpack --watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   }

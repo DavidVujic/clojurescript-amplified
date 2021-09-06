@@ -1,13 +1,13 @@
 (ns app.stories.greeting-stories
-  (:require [app.core :as core]
+  (:require [app.components.greetings :as greetings]
             [app.stories.helper :as helper]
             [reagent.core :as reagent]))
 
 (def ^:export default
   (helper/->default {:title     "A Greetings Component"
-                     :component core/greetings
+                     :component greetings/welcome
                      :args      {:message "Storybook"}}))
 
-(defn ^:export greetings [args]
+(defn ^:export welcome [args]
   (reagent/as-element
-   [core/greetings (-> args helper/->params :message)]))
+   [greetings/welcome (-> args helper/->params :message)]))
