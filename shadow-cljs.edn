@@ -8,13 +8,21 @@
   [arttuka/reagent-material-ui "5.0.0-beta.5-0"]]
 
  :dev-http {8080 "public"}
- :builds   {:app     {:target     :browser
-                      :output-dir "public/js"
-                      :asset-path "/js"
-                      :js-options {:js-provider    :external
-                                   :external-index "target/index.js"}
-                      :modules    {:main {:init-fn app.core/main}}
-                      :devtools   {:after-load app.core/main}}
+ :builds   {:app {:target           :browser
+                  :output-dir       "public/js"
+                  :asset-path       "/js"
+                  :modules          {:main {:init-fn app.core/init}}
+                  :devtools         {:after-load app.core/start}
+                  :compiler-options {:output-feature-set :es5}}
+
+            :app-with-amplify {:target     :browser
+                               :output-dir "public/js"
+                               :asset-path "/js"
+                               :js-options {:js-provider    :external
+                                            :external-index "target/index.js"}
+                               :modules    {:main {:init-fn app.core-with-amplify/init}}
+                               :devtools   {:after-load app.core-with-amplify/start}}
+
             :stories {:target     :npm-module
                       :ns-regexp  "-stories$"
                       :output-dir "public/js/stories"}}}

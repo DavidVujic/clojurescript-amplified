@@ -41,3 +41,8 @@ amplifytools.xcconfig
 #amplify-do-not-edit-end
 
 amplify/team-provider-info.json
+
+# Exclude these ones from source control in this example repo.
+# Need to find out if the app id is exposing something that shouldn't be exposed
+backend-config.json
+cljsamplifiedtestfa*

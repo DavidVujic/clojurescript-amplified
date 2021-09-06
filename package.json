@@ -26,8 +26,9 @@
   },
   "scripts": {
     "watch": "shadow-cljs watch app stories",
+    "watch-with-amplify": "shadow-cljs watch app-with-amplify stories",
     "build": "shadow-cljs release app",
-    "pack": "webpack",
+    "pack": "webpack --watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   }
