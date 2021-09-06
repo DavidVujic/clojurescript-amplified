@@ -5,10 +5,16 @@
             [reagent.dom :as rdom]
             [app.auth :as auth]))
 
+(def root-element (-> js/document (.getElementById "root")))
+
 (defn app []
   [:> (-> views/panels
           auth/with-auth)])
 
-(defn ^:export main []
+(defn start []
+  (rdom/render [app] root-element))
+
+(defn init []
+  (-> js/console (.log "Initializing app"))
   (-> Amplify (.configure aws-exports))
-  (rdom/render [app] (-> js/document (.getElementById "root"))))
+  (start))
