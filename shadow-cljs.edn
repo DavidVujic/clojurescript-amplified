@@ -5,6 +5,7 @@
 
  :dependencies
  [[reagent "1.1.0"]
+  [re-frame "1.2.0"]
   [arttuka/reagent-material-ui "5.0.0-beta.5-0"]]
 
  :dev-http {8080 "public"}
@@ -20,8 +21,8 @@
                                :asset-path "/js"
                                :js-options {:js-provider    :external
                                             :external-index "target/index.js"}
-                               :modules    {:main {:init-fn app.core-with-amplify/init}}
-                               :devtools   {:after-load app.core-with-amplify/start}}
+                               :modules    {:main {:init-fn app.amplified.core/init}}
+                               :devtools   {:after-load app.amplified.core/start}}
 
             :stories {:target     :npm-module
                       :ns-regexp  "-stories$"
