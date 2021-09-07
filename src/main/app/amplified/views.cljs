@@ -1,5 +1,6 @@
 (ns app.amplified.views
-  (:require [app.components.greetings :as greetings]
+  (:require [app.amplified.subs]
+            [app.components.greetings :as greetings]
             [app.components.song :as song]
             [re-frame.core :as rf]))
 

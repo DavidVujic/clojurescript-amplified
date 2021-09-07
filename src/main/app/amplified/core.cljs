@@ -3,7 +3,6 @@
             ["aws-amplify" :default Amplify]
             [app.amplified.auth :as auth]
             [app.amplified.events]
-            [app.amplified.subs]
             [app.amplified.views :as views]
             [re-frame.core :as rf]
             [reagent.dom :as rdom]))
