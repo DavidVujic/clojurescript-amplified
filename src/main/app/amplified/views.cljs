@@ -10,5 +10,4 @@
 (defn panels []
   [:div {:style {:max-width "350px"}}
    [header]
-   [greetings/welcome @(rf/subscribe [:app/username])]
-   [song/song-card]])
+   [greetings/welcome-with-avatar @(rf/subscribe [:app/username]) nil]])
