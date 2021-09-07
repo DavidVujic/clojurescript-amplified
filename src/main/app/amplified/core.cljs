@@ -5,7 +5,7 @@
             [app.amplified.events]
             [app.amplified.subs]
             [app.amplified.views :as views]
-            [re-frame.core :as r]
+            [re-frame.core :as rf]
             [reagent.dom :as rdom]))
 
 (def root-element (-> js/document (.getElementById "root")))
@@ -20,5 +20,5 @@
 (defn init []
   (-> js/console (.log "Initializing app with AWS Amplify"))
   (-> Amplify (.configure aws-exports))
-  (r/dispatch-sync [:app/init])
+  (rf/dispatch-sync [:app/init])
   (start))

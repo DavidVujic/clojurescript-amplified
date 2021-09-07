@@ -1,19 +1,19 @@
 (ns app.amplified.subs
-  (:require [re-frame.core :as r]))
+  (:require [re-frame.core :as rf]))
 
-(r/reg-sub
+(rf/reg-sub
  :app/user
  (fn [db]
    (get-in db [:app :user])))
 
-(r/reg-sub
+(rf/reg-sub
  :app/username
  :<- [:app/user]
  (fn [{:keys [username]}]
    username))
 
 (comment
-  @(r/subscribe [:app/user])
+  @(rf/subscribe [:app/user])
 
-  @(r/subscribe [:app/username])
+  @(rf/subscribe [:app/username])
 )
