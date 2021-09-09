@@ -12,6 +12,11 @@
  (fn [db [_ data]]
    (assoc-in db [:app :user] data)))
 
+(rf/reg-event-db
+ :app/user-summary
+ (fn [db [_ data]]
+   (assoc-in db [:app :user :summary] data)))
+
 (rf/reg-fx
  :app/fetch-user
  (fn [_]

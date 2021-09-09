@@ -6,8 +6,14 @@
             [re-frame.core :as rf]
             [reagent-material-ui.components :refer [stack]]))
 
+(defn on-about-change [^js e]
+  (rf/dispatch [:app/user-summary (-> e .-target .-value)]))
+
 (defn panels []
   [stack {:spacing 2}
-   [top/bar "Clojure. Amplified." #(auth/sign-out)]
-   [user/card {:name  @(rf/subscribe [:app/username])
-               :image nil}]])
+   [top/bar {:message   "Clojure. Amplified."
+             :logout-fn #(auth/sign-out)}]
+   [user/card {:name    @(rf/subscribe [:app/user-name])
+               :image   @(rf/subscribe [:app/user-image])
+               :summary @(rf/subscribe [:app/user-summary])}
+    {:on-about-change on-about-change}]])

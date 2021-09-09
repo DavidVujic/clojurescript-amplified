@@ -7,6 +7,10 @@
   (helper/->default {:title     "A Top Bar Component"
                      :component top/bar}))
 
+(defn logout-fn [^js e]
+  (-> js/console (.log "Clicked" (.-target e))))
+
 (defn ^:export top-bar []
   (reagent/as-element
-   [top/bar "Hello World" (fn [e] (-> js/console (.log "Clicked" (.-target e))))]))
+   [top/bar {:message   "Hello World"
+             :logout-fn logout-fn}]))
