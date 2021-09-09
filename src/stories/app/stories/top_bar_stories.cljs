@@ -4,7 +4,7 @@
             [reagent.core :as reagent]))
 
 (def ^:export default
-  (helper/->default {:title     "A top bar Component"
+  (helper/->default {:title     "A Top Bar Component"
                      :component top/bar}))
 
 (defn ^:export top-bar []

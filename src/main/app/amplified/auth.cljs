@@ -45,7 +45,3 @@
   (-> component
       reagent/reactify-component
       withAuthenticator))
-
-(comment
- (sign-out)
-)

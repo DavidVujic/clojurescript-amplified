@@ -1,12 +1,12 @@
 (ns app.amplified.views
-  (:require [app.amplified.subs]
-            [app.components.greetings :as greetings]
-            [re-frame.core :as rf]))
-
-(defn header []
-  [:h2 "Clojure. Amplified."])
+  (:require [app.amplified.auth :as auth]
+            [app.amplified.subs]
+            [app.components.user :as user]
+            [app.components.top :as top]
+            [re-frame.core :as rf]
+            [reagent-material-ui.components :refer [stack]]))
 
 (defn panels []
-  [:<>
-   [header]
-   [greetings/welcome-with-avatar @(rf/subscribe [:app/username]) nil]])
+  [stack {:spacing 2}
+   [top/bar "Clojure. Amplified." #(auth/sign-out)]
+   [user/card @(rf/subscribe [:app/username]) nil]])
