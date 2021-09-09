@@ -4,37 +4,42 @@
             [clojure.walk :as walk]
             [reagent.core :as reagent]))
 
-(defn- on-signed-out [_]
-  (-> js/window .-location (.reload)))
-
-(defn- on-failed-sign-out [e]
+(defn- failed [e]
   (-> js/console (.error e)))
 
-(defn sign-out []
-  (-> Auth
-      .signOut
-      (.then on-signed-out)
-      (.catch on-failed-sign-out)))
+(defn- on-signed-out [_]
+  (-> js/window .-location .reload))
 
-(defn ->attributes [^js data]
+(defn- js->attributes [^js data]
   (-> data
       .-attributes
       js->clj
       walk/keywordize-keys))
 
-(defn- ->user-data [^js data]
-  (assoc (->attributes data) :username (-> data .-username)))
+(defn- js->user-data [^js data]
+  (assoc (js->attributes data) :username (-> data .-username)))
 
-(defn user! [success-fn fail-fn]
+(defn- js->event [^js data]
+  (-> data
+      .-payload
+      .-event
+      keyword))
+
+(defn sign-out []
+  (-> Auth
+      .signOut
+      (.then on-signed-out)
+      (.catch failed)))
+
+(defn user! [success-fn]
   (-> Auth
       .currentAuthenticatedUser
-      (.then (fn [^js data] (-> data ->user-data success-fn)))
-      (.catch fail-fn)))
+      (.then #(-> % js->user-data success-fn))
+      (.catch failed)))
 
-(defn listen-to-auth-events [on-event]
+(defn listen-to-auth-events [callback]
   (-> Hub
-      (.listen "auth" (fn [^js data]
-                        (on-event (-> data .-payload .-event keyword))))))
+      (.listen "auth" #(-> % js->event callback))))
 
 (defn with-auth [component]
   (-> component

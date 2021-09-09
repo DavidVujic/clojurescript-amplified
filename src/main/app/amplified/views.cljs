@@ -7,6 +7,6 @@
   [:h2 "Clojure. Amplified."])
 
 (defn panels []
-  [:div {:style {:max-width "350px"}}
+  [:<>
    [header]
    [greetings/welcome-with-avatar @(rf/subscribe [:app/username]) nil]])

@@ -2,9 +2,6 @@
   (:require [app.amplified.auth :as auth]
             [re-frame.core :as rf]))
 
-(defn- failed [e]
-  (-> js/console (.error e)))
-
 (rf/reg-event-db
  :app/teardown
  (fn [db _]
@@ -18,7 +15,7 @@
 (rf/reg-fx
  :app/fetch-user
  (fn [_]
-   (auth/user! #(rf/dispatch [:app/user %]) failed)))
+   (auth/user! #(rf/dispatch [:app/user %]))))
 
 (rf/reg-event-fx
  :app/user!
