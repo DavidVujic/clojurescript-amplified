@@ -9,4 +9,5 @@
 (defn panels []
   [stack {:spacing 2}
    [top/bar "Clojure. Amplified." #(auth/sign-out)]
-   [user/card @(rf/subscribe [:app/username]) nil]])
+   [user/card {:name  @(rf/subscribe [:app/username])
+               :image nil}]])
