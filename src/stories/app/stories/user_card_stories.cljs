@@ -23,7 +23,7 @@
    {:name    user-name
     :image   image-url
     :summary @about}
-   {:on-about-change on-change}])
+   {:on-summary-change on-change}])
 
 (defn ^:export user-card [args]
   (let [params (-> args helper/->params)]

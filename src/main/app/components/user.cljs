@@ -2,7 +2,7 @@
   (:require [app.components.greetings :as greetings]
             [reagent-material-ui.components :refer [box stack text-field]]))
 
-(defn card [{:keys [name image summary]} {:keys [on-about-change]}]
+(defn card [{:keys [name image summary]} {:keys [on-summary-change]}]
   [box {:sx {:p             4
              :border        "1px solid #efefef"
              :border-radius 2
@@ -14,5 +14,5 @@
                  :max-rows  6
                  :rows      3
                  :label     "About"
-                 :on-change on-about-change
+                 :on-change on-summary-change
                  :value     summary}]]])
