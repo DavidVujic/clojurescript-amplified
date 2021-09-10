@@ -6,6 +6,8 @@
             [re-frame.core :as rf]
             [reagent-material-ui.components :refer [stack]]))
 
+(def subscribe (comp deref rf/subscribe))
+
 (defn on-summary-change [^js e]
   (rf/dispatch [:app/user-summary (-> e .-target .-value)]))
 
@@ -13,7 +15,7 @@
   [stack {:spacing 2}
    [top/bar {:message   "Clojure. Amplified."
              :logout-fn #(auth/sign-out)}]
-   [user/card {:name    @(rf/subscribe [:app/user-name])
-               :image   @(rf/subscribe [:app/user-image])
-               :summary @(rf/subscribe [:app/user-summary])}
+   [user/card {:name    (subscribe [:app/user-name])
+               :image   (subscribe [:app/user-image])
+               :summary (subscribe [:app/user-summary])}
     {:on-summary-change on-summary-change}]])
