@@ -13,10 +13,16 @@
    username))
 
 (rf/reg-sub
- :app/user-summary
+ :app/user-settings
  :<- [:app/user]
  (fn [{:keys [settings]}]
-   (:summary settings)))
+   settings))
+
+(rf/reg-sub
+ :app/user-summary
+ :<- [:app/user-settings]
+ (fn [{:keys [summary]}]
+   summary))
 
 (rf/reg-sub
  :app/user-image

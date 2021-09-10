@@ -4,6 +4,7 @@
             [app.components.top :as top]
             [app.components.user :as user]
             [re-frame.core :as rf]
+            [app.amplified.api.update :as update-api]
             [reagent-material-ui.components :refer [stack]]))
 
 (def subscribe (comp deref rf/subscribe))
@@ -11,8 +12,9 @@
 (defn on-summary-change [^js e]
   (rf/dispatch [:app/user-summary (-> e .-target .-value)]))
 
-(defn on-save [^js e]
-  (println "save"))
+(defn on-save [^js _e]
+  (let [settings (subscribe [:app/user-settings])]
+    (update-api/settings! settings #(println "saved"))))
 
 (defn panels []
   [stack {:spacing 2}
