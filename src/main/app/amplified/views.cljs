@@ -15,7 +15,8 @@
   [stack {:spacing 2}
    [top/bar {:message   "Clojure. Amplified."
              :logout-fn #(auth/sign-out)}]
-   [user/card {:name    (subscribe [:app/user-name])
-               :image   (subscribe [:app/user-image])
-               :summary (subscribe [:app/user-summary])}
+   [user/card
+    {:name    (subscribe [:app/user-name])
+     :image   (subscribe [:app/user-image])
+     :summary (subscribe [:app/user-summary])}
     {:on-summary-change on-summary-change}]])
