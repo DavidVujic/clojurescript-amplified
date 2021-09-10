@@ -47,3 +47,10 @@ amplify/team-provider-info.json
 backend-config.json
 cljsamplifiedtestfa*
 cljsamplifiedtest6*
+
+# Exclude almost all API backend files for this example repo. The schema is public.
+amplify/backend/api/usersettings/build
+amplify/backend/api/usersettings/resolvers
+amplify/backend/api/usersettings/stacks
+amplify/backend/api/usersettings/parameters.json
+amplify/backend/api/usersettings/transform.conf.json

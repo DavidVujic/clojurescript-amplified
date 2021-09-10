@@ -1,0 +1,4 @@
+type UserSettings @model @auth(rules: [{ allow: owner, operations: [create, delete, update]}]) {
+  id: ID!
+  summary: String
+}
