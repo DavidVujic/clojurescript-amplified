@@ -7,21 +7,19 @@
   (helper/->default {:title     "A User Card"
                      :component user/card
                      :args      {:user-name "David"
-                                 :image-url "https://www.gravatar.com/avatar/49e43b90a0eb475326df9e8b6dfbabcd"}}))
+                                 :image-url "https://www.gravatar.com/avatar/49e43b90a0eb475326df9e8b6dfbabcd"}
+                     :argTypes  {:on-save {:action "clicked on save!"}}}))
 
 (def about (reagent/atom "This is a placeholder text"))
 
 (defn on-change [^js e]
   (reset! about (-> e .-target .-value)))
 
-(defn on-save [_e]
-  (println "save"))
-
 (defn user-card-component
   "It is possible to handle state within a story, by using an atom.
    The user/card component is extracted to a separate function to
    be able to deref the atom"
-  [{:keys [user-name image-url]}]
+  [{:keys [user-name image-url on-save]}]
   [user/card
    {:name    user-name
     :image   image-url
