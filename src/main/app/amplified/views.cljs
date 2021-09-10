@@ -1,10 +1,9 @@
 (ns app.amplified.views
   (:require [app.amplified.auth :as auth]
             [app.amplified.subs]
-            [app.components.user :as user]
             [app.components.top :as top]
+            [app.components.user :as user]
             [re-frame.core :as rf]
-            [app.amplified.api.fetch :as fetch]
             [reagent-material-ui.components :refer [stack]]))
 
 (def subscribe (comp deref rf/subscribe))
