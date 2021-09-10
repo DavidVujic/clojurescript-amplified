@@ -11,6 +11,9 @@
 (defn on-summary-change [^js e]
   (rf/dispatch [:app/user-summary (-> e .-target .-value)]))
 
+(defn on-save [^js e]
+  (println "save"))
+
 (defn panels []
   [stack {:spacing 2}
    [top/bar {:message   "Clojure. Amplified."
@@ -19,4 +22,5 @@
     {:name    (subscribe [:app/user-name])
      :image   (subscribe [:app/user-image])
      :summary (subscribe [:app/user-summary])}
-    {:on-summary-change on-summary-change}]])
+    {:on-summary-change on-summary-change
+     :on-save           on-save}]])

@@ -6,7 +6,7 @@
 
 (def focused? (r/atom false))
 
-(defn card [{:keys [name image summary]} {:keys [on-summary-change]}]
+(defn card [{:keys [name image summary]} {:keys [on-summary-change on-save]}]
   [box {:sx {:p             4
              :border        "1px solid #efefef"
              :border-radius 2
@@ -23,7 +23,7 @@
                   :rows      3
                   :label     "About"
                   :on-change on-summary-change
-                  :on-blur   #(reset! focused? false)
+                  ;:on-blur   #(reset! focused? false)
                   :on-focus  #(reset! focused? true)
                   :value     summary}]
-     [button-component/save @focused?]]]])
+     [button-component/save @focused? on-save]]]])

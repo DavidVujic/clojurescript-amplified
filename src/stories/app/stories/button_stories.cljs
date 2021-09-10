@@ -6,10 +6,13 @@
 (def ^:export default
   (helper/->default {:title     "A Save Button Component"
                      :component button/save
-                     :args      {:visible?   true}}))
+                     :args      {:visible? true}}))
+
+(defn click-fn [_e]
+  (println "clicked"))
 
 (defn ^:export save-button [args]
   (let [params    (-> args helper/->params)
         visible?   (:visible? params)]
     (reagent/as-element
-     [button/save visible?])))
+     [button/save visible? click-fn])))

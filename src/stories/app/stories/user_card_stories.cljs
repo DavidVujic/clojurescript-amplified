@@ -14,6 +14,9 @@
 (defn on-change [^js e]
   (reset! about (-> e .-target .-value)))
 
+(defn on-save [_e]
+  (println "save"))
+
 (defn user-card-component
   "It is possible to handle state within a story, by using an atom.
    The user/card component is extracted to a separate function to
@@ -23,7 +26,8 @@
    {:name    user-name
     :image   image-url
     :summary @about}
-   {:on-summary-change on-change}])
+   {:on-summary-change on-change
+    :on-save           on-save}])
 
 (defn ^:export user-card [args]
   (let [params (-> args helper/->params)]
