@@ -15,8 +15,8 @@
 (rf/reg-sub
  :app/user-summary
  :<- [:app/user]
- (fn [{:keys [summary]}]
-   summary))
+ (fn [{:keys [settings]}]
+   (:summary settings)))
 
 (rf/reg-sub
  :app/user-image
@@ -24,6 +24,13 @@
  (fn [{:keys [image]}]
    image))
 
+(rf/reg-sub
+ :app/ready?
+ :<- [:app/user]
+ (fn [user]
+   (boolean (get user :settings false))))
+
 (comment
   @(rf/subscribe [:app/user])
+  @(rf/subscribe [:app/ready?])
 )

@@ -4,6 +4,7 @@
             [clojure.walk :as walk]
             [reagent.core :as reagent]))
 
+;; TODO: a real world example should have things like retries and error messages in the UI.
 (defn- failed [e]
   (-> js/console (.error e)))
 
