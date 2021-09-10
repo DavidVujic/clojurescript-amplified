@@ -1,6 +1,7 @@
 (ns app.components.user
   (:require [app.components.greetings :as greetings]
-            [reagent-material-ui.components :refer [box button stack text-field]]
+            [app.components.button :as button-component]
+            [reagent-material-ui.components :refer [box stack text-field]]
             [reagent.core :as r]))
 
 (def focused? (r/atom false))
@@ -25,9 +26,4 @@
                   :on-blur   #(reset! focused? false)
                   :on-focus  #(reset! focused? true)
                   :value     summary}]
-     [button (cond-> {:variant "outlined"
-                      :size    "small"}
-               (not @focused?) (assoc :style {:visibility "hidden"
-                                              :opacity    0
-                                              :transition "visibility 0.3s, opacity 0.3s linear"}))
-      "done"]]]])
+     [button-component/save @focused?]]]])
