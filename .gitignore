@@ -46,3 +46,4 @@ amplify/team-provider-info.json
 # Need to find out if the app id is exposing something that shouldn't be exposed
 backend-config.json
 cljsamplifiedtestfa*
+cljsamplifiedtest6*
