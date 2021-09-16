@@ -66,7 +66,10 @@ For __AWS Amplify__ example code, replace the `:app` alias with `:app-with-ampli
 
 ### Articles
 
-#### About ClojureScript and AWS Amplify, using Webpack
+#### Develop a ClojureScript web app, using cool tools from the JavaScript ecosystem.
+[ClojureScript.Amplified.](https://davidvujic.blogspot.com/2021/09/clojurescript-amplified.html)
+
+#### About ClojureScript and a setup for AWS Amplify, using Webpack
 [Hey Webpack, Hey ClojureScript](https://davidvujic.blogspot.com/2021/08/hey-webpack-hey-clojurescript.html)
 
 #### About ClojureScript and Storybook
@@ -75,5 +78,3 @@ For __AWS Amplify__ example code, replace the `:app` alias with `:app-with-ampli
 #### About Clojurescript and Material-UI
 [Material Design in a Functional World](https://davidvujic.blogspot.com/2021/09/material-design-in-a-functional-world.html)
 
-
-More example code, tools setup and blog posts in the making ...
