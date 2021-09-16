@@ -1,7 +1,6 @@
 (ns app.amplified.auth
   (:require ["@aws-amplify/ui-react" :refer [withAuthenticator]]
             ["aws-amplify" :refer [Auth Hub]]
-            [clojure.walk :as walk]
             [reagent.core :as reagent]))
 
 ;; TODO: a real world example should have things like retries and error messages in the UI.
@@ -14,8 +13,7 @@
 (defn- js->attributes [^js data]
   (-> data
       .-attributes
-      js->clj
-      walk/keywordize-keys))
+      (js->clj :keywordize-keys true)))
 
 (defn- js->user-data [^js data]
   (assoc (js->attributes data) :username (-> data .-username)))
