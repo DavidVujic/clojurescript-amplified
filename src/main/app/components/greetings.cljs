@@ -1,5 +1,5 @@
 (ns app.components.greetings
-  (:require [reagent-material-ui.components :refer [avatar stack]]))
+  (:require [reagent-mui.components :refer [avatar stack]]))
 
 (defn welcome [name]
   [:p "Hello " [:strong name]])

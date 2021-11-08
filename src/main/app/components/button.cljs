@@ -1,5 +1,5 @@
 (ns app.components.button
-  (:require [reagent-material-ui.components :refer [button]]))
+  (:require [reagent-mui.components :refer [button]]))
 
 (defn- styling [visible?]
   {:transition "visibility 0.3s, opacity 0.3s linear"

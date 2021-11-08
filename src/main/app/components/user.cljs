@@ -1,7 +1,7 @@
 (ns app.components.user
   (:require [app.components.greetings :as greetings]
             [app.components.button :as button-component]
-            [reagent-material-ui.components :refer [box stack text-field]]
+            [reagent-mui.components :refer [box stack text-field]]
             [reagent.core :as r]))
 
 (def focused? (r/atom false))

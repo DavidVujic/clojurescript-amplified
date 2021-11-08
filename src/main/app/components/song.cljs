@@ -1,9 +1,9 @@
 (ns app.components.song
-  (:require [reagent-material-ui.components :refer [box card card-content card-media icon-button typography]]
-            [reagent-material-ui.icons.play-arrow :refer [play-arrow]]
-            [reagent-material-ui.icons.skip-next :refer [skip-next]]
-            [reagent-material-ui.icons.skip-previous :refer [skip-previous]]
-            [reagent-material-ui.styles :as styles]))
+  (:require [reagent-mui.components :refer [box card card-content card-media icon-button typography]]
+            [reagent-mui.icons.play-arrow :refer [play-arrow]]
+            [reagent-mui.icons.skip-next :refer [skip-next]]
+            [reagent-mui.icons.skip-previous :refer [skip-previous]]
+            [reagent-mui.styles :as styles]))
 
 (defn- fn-song-card []
   (let [right-to-left? (-> styles/use-theme :direction (= "rtl"))]
