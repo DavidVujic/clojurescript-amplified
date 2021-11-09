@@ -6,7 +6,7 @@
  :dependencies
  [[reagent "1.1.0"]
   [re-frame "1.2.0"]
-  [arttuka/reagent-material-ui "5.0.0-beta.5-0"]]
+  [arttuka/reagent-material-ui "5.0.0-0"]]
 
  :dev-http {8080 "public"}
  :builds   {:app {:target           :browser

@@ -5,7 +5,7 @@
             [app.components.user :as user]
             [re-frame.core :as rf]
             [app.amplified.api.update :as update-api]
-            [reagent-material-ui.components :refer [stack]]))
+            [reagent-mui.components :refer [stack]]))
 
 (def subscribe (comp deref rf/subscribe))
 

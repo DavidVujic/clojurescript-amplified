@@ -1,5 +1,5 @@
 (ns app.components.top
-  (:require [reagent-material-ui.components :refer [app-bar box toolbar typography button]]))
+  (:require [reagent-mui.components :refer [app-bar box toolbar typography button]]))
 
 (defn bar [{:keys [message logout-fn]}]
   [box {:sx {:flex-grow 1}}
