@@ -19,6 +19,22 @@ pom.xml.asc
 .hgignore
 .hg/
 
+
+amplify/team-provider-info.json
+
+# Exclude these ones from source control in this example repo.
+# Need to find out if the app id is exposing something that shouldn't be exposed
+backend-config.json
+cljsamplifiedtestfa*
+cljsamplifiedtest6*
+
+# Exclude almost all API backend files for this example repo. The schema is public.
+amplify/backend/api/usersettings/build
+amplify/backend/api/usersettings/resolvers
+amplify/backend/api/usersettings/stacks
+amplify/backend/api/usersettings/parameters.json
+amplify/backend/api/usersettings/transform.conf.json
+
 #amplify-do-not-edit-begin
 amplify/\#current-cloud-backend
 amplify/.config/local-*
@@ -40,18 +56,3 @@ amplifytools.xcconfig
 .secret-*
 **.sample
 #amplify-do-not-edit-end
-
-amplify/team-provider-info.json
-
-# Exclude these ones from source control in this example repo.
-# Need to find out if the app id is exposing something that shouldn't be exposed
-backend-config.json
-cljsamplifiedtestfa*
-cljsamplifiedtest6*
-
-# Exclude almost all API backend files for this example repo. The schema is public.
-amplify/backend/api/usersettings/build
-amplify/backend/api/usersettings/resolvers
-amplify/backend/api/usersettings/stacks
-amplify/backend/api/usersettings/parameters.json
-amplify/backend/api/usersettings/transform.conf.json
