@@ -13,8 +13,7 @@
                   :output-dir       "public/js"
                   :asset-path       "/js"
                   :modules          {:main {:init-fn app.core/init}}
-                  :devtools         {:after-load app.core/start}
-                  :compiler-options {:output-feature-set :es5}}
+                  :devtools         {:after-load app.core/start}}
 
             :app-with-amplify {:target     :browser
                                :output-dir "public/js"
