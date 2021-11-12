@@ -11,16 +11,16 @@
     "@storybook/react": "6.3.12",
     "babel-loader": "8.2.3",
     "process": "^0.11.10",
-    "shadow-cljs": "2.16.2",
-    "webpack": "5.62.1",
+    "shadow-cljs": "2.16.4",
+    "webpack": "5.64.0",
     "webpack-cli": "^4.8.0"
   },
   "dependencies": {
-    "@aws-amplify/ui-react": "1.2.22",
+    "@aws-amplify/ui-react": "1.2.24",
     "@emotion/react": "11.5.0",
     "@emotion/styled": "11.3.0",
     "@mui/material": "5.0.0",
-    "aws-amplify": "4.3.4",
+    "aws-amplify": "4.3.6",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
