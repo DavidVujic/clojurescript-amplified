@@ -10,7 +10,14 @@
 (defn logout-fn [^js e]
   (-> js/console (.log "Clicked" (.-target e))))
 
-(defn ^:export top-bar []
+
+;; A "Templating" example, as an alternative to the JavaScript bind syntax explained in the Storybook docs
+(defn template [args]
   (reagent/as-element
-   [top/bar {:message   "Hello World"
-             :logout-fn logout-fn}]))
+   [top/bar (merge {:logout-fn logout-fn } args)]))
+
+(defn ^:export top-bar-one []
+  (template {:message "Hello World"}))
+
+(defn ^:export top-bar-two []
+  (template {:message "Hello Storybook"}))
