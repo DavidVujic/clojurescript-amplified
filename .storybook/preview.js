@@ -11,5 +11,6 @@ export const parameters = {
   viewport: {
     viewports: INITIAL_VIEWPORTS,
   },
+  docs: { inlineStories: false } // A (temporary?) workaround for dependecy conflicts in Storybook and MUI5.
 }
 
