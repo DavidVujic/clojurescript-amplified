@@ -4,5 +4,13 @@
 (defn ->params [^js args]
   (js->clj args :keywordize-keys true))
 
+(defn ->reactified [options path]
+  (if (get-in options path)
+    (update-in options path reagent/reactify-component)
+    options))
+
 (defn ->default [options]
-  (clj->js (update options :component reagent/reactify-component)))
+  (-> options
+      (->reactified [:component])
+      (->reactified [:parameters :docs :page])
+      clj->js))
