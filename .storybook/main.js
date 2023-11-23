@@ -5,13 +5,12 @@ module.exports = {
   "stories": [
     "../public/js/stories/*_stories.js"
   ],
+
   "addons": [
     "@storybook/addon-links",
     "@storybook/addon-essentials"
   ],
-  "core": {
-    "builder": "webpack5"
-  },
+
   webpackFinal: (config) => {
     const { rules } = config.module;
     config.module.rules = [...rules, ...appConfig.module.rules];
@@ -22,4 +21,13 @@ module.exports = {
 
     return config;
   },
+
+  docs: {
+    autodocs: true
+  },
+
+  framework: {
+    name: "@storybook/react-webpack5",
+    options: {}
+  }
 }
