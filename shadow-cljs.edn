@@ -22,7 +22,7 @@
                                             :external-index "target/index.js"}
                                :modules    {:main {:init-fn app.amplified.core/init}}
                                :devtools   {:after-load app.amplified.core/start}}
-
-            :stories {:target     :npm-module
-                      :ns-regexp  "-stories$"
-                      :output-dir "public/js/stories"}}}
+            :stories {:target           :esm
+                      :output-dir       "public/js/stories"
+                      :ns-regexp "-stories$"
+                      :modules          {:app.stories.avatar_stories {:exports {default app.stories.avatar-stories/default}}}}}}
